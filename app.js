@@ -22,7 +22,7 @@
             })
         });
     } catch(err){
-        alert("API switched off. :)");
+        alert("API offline");
     }
 })();
     
