@@ -9,13 +9,13 @@
             let wrapper = document.getElementById('wrapper');
             
             data.forEach((platform) => {
-                console.log(platform);
+                // console.log(platform.pid);
                 let div = document.createElement('div');
     
                 div.innerHTML = 
                 `<div class="col d-flex justify-content-between  py-2 border-bottom align-items-center">
                     <p>${platform.title}</p>
-                    <button class="btn btn-primary" onClick="updateCache(${platform.platformID})">Update</button>
+                    <button class="btn btn-primary" onClick="updateCache(${platform.pid})">Update</button>
                 </div>`
     
                 wrapper.append(div);            
@@ -33,6 +33,6 @@ function updateCache(id){
     .then((res) => res.json())
     .then((data) => {
         JSON.stringify(data)
-        alert(`You succesfully cleared the cache on:  ${data.platformName}`);
+        alert(`You succesfully cleared the cache on:  ${data.title}`);
     })
 }
